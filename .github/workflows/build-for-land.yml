@@ -9,7 +9,7 @@ jobs:
       - name: Setting up Build Directories
         run: |
           mkdir ~/bin
-          export PATH=~/bin:$PATH
+          #export PATH=~/bin:$PATH
           mkdir -p ~/android/lineage
           cd ~/android/lineage
           
@@ -35,7 +35,8 @@ jobs:
           
       - name: Setting Up Local Repo
         run: |
-          repo init -u https://github.com/LineageOS/android.git -b lineage-15.1 && repo sync
+          ~/bin/repo init -u https://github.com/LineageOS/android.git -b lineage-15.1
+          ~/bin/repo sync
           
       #Now ensure your Redmi 3S/3X is connected to your computer via the USB cable, with ADB and root enabled, and that you are in the ~/android/lineage/device/xiaomi/land folder.
       #Then run the extract-files.sh script:
