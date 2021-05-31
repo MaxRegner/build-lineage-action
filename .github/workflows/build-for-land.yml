@@ -9,7 +9,7 @@ jobs:
       - name: Setting up Build Directories
         run: |
           mkdir ~/bin
-          PATH=~/bin:$PATH
+          export PATH=~/bin:$PATH
           mkdir -p ~/android/lineage
           cd ~/android/lineage
           
