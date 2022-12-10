@@ -31,7 +31,7 @@ jobs:
         run: |
           export USE_CCACHE=1
           export CCACHE_EXEC=/usr/bin/ccache
-          ccache -M 25G
+          ccache -M 75G
           
       - name: Setting Up Local Repo
         run: |
