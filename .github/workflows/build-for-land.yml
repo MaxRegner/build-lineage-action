@@ -35,13 +35,12 @@ jobs:
           
       - name: Setting Up Local Repo
         run: |
-          ~/bin/repo init -u https://github.com/LineageOS/android.git -b lineage-15.1
+          ~/bin/repo init -u https://github.com/LineageOS/android.git -b lineage-16.0
           ~/bin/repo sync
           
-      #Now ensure your Redmi 3S/3X is connected to your computer via the USB cable, with ADB and root enabled, and that you are in the ~/android/lineage/device/xiaomi/land folder.
-      #Then run the extract-files.sh script:
-      #./extract-files.sh
-      #The blobs should be pulled into the ~/android/lineage/vendor/xiaomi folder. If you see “command not found” errors, adb may need to be placed in ~/bin.
+      git clone https://github.com/MaxRegner/proprietary_vendor_sony vendor/sony
+      git clone https://github.com/Chippa-a/android_device_sony_kugo device/sony/kugo
+      git clone https://github.com/Chippa-a/android_kernel_sony_msm8956 kenrel/sony/msm8956
           
       - name: Setting Up Build Environment
         run: |
@@ -49,7 +48,7 @@ jobs:
           
       - name: Starting Build Process
         run: |
-          croot && brunch land
+          croot && breakfast kugo
       
       - name: Get current time
         uses: srfrnk/current-time@master
