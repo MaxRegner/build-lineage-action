@@ -24,8 +24,8 @@ jobs:
           
       - name: Authenticating "repo" with GitHub Account
         run: |
-          git config --global user.email "banyaltanishq@gmail.com"
-          git config --global user.name "Tanishq-Banyal"
+          git config --global user.email "max_regner@t-online.de"
+          git config --global user.name "MaxRegner"
           
       - name: Enabling Caching (not sure)
         run: |
