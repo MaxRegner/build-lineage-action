@@ -36,11 +36,10 @@ jobs:
       - name: Setting Up Local Repo
         run: |
           ~/bin/repo init -u https://github.com/LineageOS/android.git -b lineage-16.0
-          ~/bin/repo sync
-          
-      git clone https://github.com/MaxRegner/proprietary_vendor_sony vendor/sony
-      git clone https://github.com/Chippa-a/android_device_sony_kugo device/sony/kugo
-      git clone https://github.com/Chippa-a/android_kernel_sony_msm8956 kenrel/sony/msm8956
+          ~/bin/repo sync 
+          git clone https://github.com/Chippa-a/android_device_sony_kugo device/sony/kugo
+          git clone https://github.com/Chippa-a/android_kernel_sony_msm8956 kenrel/sony/msm8956
+          git clone https://github.com/MaxRegner/proprietary_vendor_sony vendor/sony
           
       - name: Setting Up Build Environment
         run: |
